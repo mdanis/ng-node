@@ -1,0 +1,40 @@
+
+  <!--sitemap class-->
+  <ul class="sitmapClass">
+      <li ng-repeat="classList in classDetail">
+      <a href="javascript:;" ng-click="getChapterDetail(classList.rack_id,classList.name)">
+          <span class="shortName">{{classList.name}}</span>Class-{{classList.name}}</a></li>
+  
+  </ul>
+    <!--sitemap class end-->
+  
+  
+<div style="border-bottom:1px solid #ddd; padding-bottom:10px; margin-bottom:10px;">
+	<h1 class="crisp-splash-header"> Class - {{selectedClass}} </h1>
+    <a href="javascript:;" style="float:right"><img ng-src="{{siteUrl}}/images/back.png"></a>
+        <div class="clear">&nbsp;</div>
+    </div>
+     
+      <div class="crisp-g">
+          <div class="crisp-u-1-3" ng-repeat="subjectList in chapterDetail">
+      <h2 class="skill-tree-skills-header">{{subjectList.name}}</h2>
+		 <ul class="skill-tree-skills">
+              
+                     <li class="skill-tree-skill-node" ng-repeat="chapterList in subjectList.chapters">
+                         <a class="skill-tree-skill-link" href="{{redirectUrl}}/{{chapterList.rack_id}}" target="_blank" id="{{chapterList.rack_id}}">
+                <span class="skill-tree-skill-name">{{chapterList.name}}</span>
+                </a>
+                </li>
+              
+             
+            </ul>
+            
+           
+
+      </div>
+      </div>
+      
+      
+      <p style="font-size:11px;"><strong>Note</strong>: All Contents are Dynamic</p>
+     
+    <div class="clear">&nbsp;</div>
